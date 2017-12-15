@@ -26,21 +26,23 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    strat = random.choice([1,2])
+    strat = random.choice([1,2,3,4])
     if strat == 1:
         if 'b' in their_history[-1:]:
             return 'b'
-        if 'c' in their_history[-1:]:
+        elif 'c' in their_history[-1:]:
+            return 'c'
+        elif:
             return 'c'
     if strat == 2:
-        if 'b' in their_history[-10:]:
+        if random.random()<0.5:
             return 'b'
         else:
-            if random.random()<0.5:
-                return 'b'
-            else:
-                return 'c'
-    
+            return 'c'
+    if strat == 3:
+        return 'b' 
+    if strat == 4:
+        return 'c'
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
